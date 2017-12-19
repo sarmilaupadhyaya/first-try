@@ -1,21 +1,28 @@
-import math
-from time import time
-t = time()
-def divisors(n):
-    number_of_factors = 0
+from time import sleep
 
-    for i in range(1, int(math.ceil(math.sqrt(n)))):
-        if n % i == 0:
-            number_of_factors +=2
-        else:
-            continue
-    return number_of_factors
 
-x=1
-for y in range(2,1000000):
-    x += y
-    if divisors(x) >= 500:
-        print x
-        break
-tt = time()-t
-print tt
+def sleep_decorator(function):
+
+    """
+    Limits how fast the function is
+    called.
+    """
+
+    def wrapper(*args, **kwargs):
+        sleep(2)
+        return function(*args, **kwargs)
+    return wrapper
+
+
+@sleep_decorator
+def print_number(num):
+    return num
+
+print(print_number(222))
+
+for num in range(1, 6):
+    print(print_number(num))
+
+
+
+
