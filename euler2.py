@@ -53,8 +53,6 @@ while True:
         break;
 print(number)
 
-<<<<<<< HEAD
-=======
 def sleep_decorator(function):
 
     """
@@ -79,4 +77,4 @@ for num in range(1, 6):
 
 
 
-
+#commited
