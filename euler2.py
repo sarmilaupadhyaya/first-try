@@ -7,8 +7,8 @@ trainglen=7
 
 def sieve(limit):
     not_prime = []
-    prime = []
-    for i in xrange(2, limit + 1):
+    prime = [2]
+    for i in xrange(3, limit + 1):
         if i not in not_prime:
             prime.append(i)
             for j in xrange(i * i, limit + 1, i):
